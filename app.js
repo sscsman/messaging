@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var pg = require('pg');
 var http = require('http');
-var boards = require('./routes/boards');
+//var boards = require('./routes/boards');
 var register = require('./routes/register');
 
 var index = require('./routes/index');
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+//app.use('/boards', boards);
 app.use('/register', register);
 
 app.use('/', index);
