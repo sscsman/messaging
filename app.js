@@ -6,13 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var pg = require('pg');
 var http = require('http');
-//var boards = require('./routes/boards');
-var register = require('./routes/register');
-var session = require('express-session');
-var login = require('./routes/login');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+var session = require('express-session');
+var register = require('./routes/register');
+var login = require('./routes/login');
+var message = require('./routes/message');
+var socketio = require( 'socket.io' );
 
 var app = express();
 
@@ -29,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'password',
   resave: false,
   saveUninitialized: true
 }));
@@ -40,6 +43,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/message', message);
 
 
 // catch 404 and forward to error handler
