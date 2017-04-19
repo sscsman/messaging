@@ -18,16 +18,14 @@ function socketio(){
     });
 
     //socket処理を記載する
-    io.on('connection', function(socket){
-                  console.log('IO!!');
-        //socket処理
-        socket.on('socketName',function(data){
-
-            console.log(data);
-            io.sockets.emit('socketName2',data);
-        })
-
+    io.on('connection', (socket) => {
+      console.log('a user connected');
+      socket.on('chat message', (msg) => {
+        console.log('message: ' + msg);
+        io.emit('chat message', msg);
+      });
     });
+
 };
 
 //export

@@ -5,7 +5,7 @@ var pg = require('pg');
 
 router.get('/', function(req, res, next) {
     if (req.session.user_id) {
-        res.redirect('/');
+        res.redirect('/message');
     } else {
         res.render('login', {
             title: 'ログイン'
