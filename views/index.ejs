@@ -3,9 +3,57 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+h1{
+  padding-left: 70px;
+  font-size:90px;
+  color: transparent;
+  background-color : black;
+  text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+-webkit-background-clip : text;
+
+}
+body{
+
+  background-color: #8eff56;
+}
+a{
+  font-size: 30px;
+}
+.button {
+  padding :30px;
+  margin:40px;
+	position: relative;
+	background-color: #f7d034;
+	border-radius: 4px;
+	color: #fff;
+	line-height: 140px;
+	-webkit-transition: none;
+	transition: none;
+	box-shadow: 0 3px 0 #f7ba59;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+}
+.button:hover {
+	top: -4px;
+	box-shadow: 0 7px 0 #f7ba59;
+}
+.button:active {
+	top: 3px;
+	box-shadow: none;
+}
+.container{
+
+    left: 0;
+right: 0;
+}
+    </style>
   </head>
   <body>
+<div class="container">
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <a class="button" href="/login">ログイン</a>
+    <a class="button" href="/register">新規ユーザー登録</a>
+</div>
   </body>
 </html>

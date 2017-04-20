@@ -8,7 +8,7 @@ var async = require('async');
 
 router.get('/', function(req, res, next) {
     res.render('register', {
-        title: '新規会員登録'
+        title: '新規ユーザー登録'
     });
 });
 

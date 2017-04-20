@@ -6,14 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <link rel='stylesheet' href='/stylesheets/style.css'>
+<style>
+body{
+background-color:  #8eff56;
+
+}
+.wrapper{
+  width:300px;
+  padding:50px;
+background-color: #98c8ff;
+  text-align: right;
+}
+.wrapper>p{font-size: 30px;
+text-align: left;
+}
+
+</style>
 </head>
 <body>
 <div class="wrapper">
     <p class="main-title"><%= title %></p>
     <form action="/login" method="post" class="board-form">
-        <span class="label">ID</span><input type="text" name="loginid" class="input" required><br>
+        <span class="label">ログインID：　</span><input type="text" name="loginid" class="input" required><br>
         <br>
-        <span class="label">パスワード</span><input type="password" name="password" class="input" required><br>
+        <span class="label">パスワード：　</span><input type="password" name="password" class="input" required><br>
         <br>
         <button type="submit" class="submit">ログイン</button>
     </form>
