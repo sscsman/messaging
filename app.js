@@ -16,6 +16,7 @@ var register = require('./routes/register');
 var login = require('./routes/login');
 var message = require('./routes/message');
 var socketio = require( 'socket.io' );
+var friend = require('./routes/friend');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/users', users);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/message', message);
+app.use('/friend', friend);
 
 
 // catch 404 and forward to error handler

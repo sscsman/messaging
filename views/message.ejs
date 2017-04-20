@@ -23,6 +23,11 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.js"   integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="   crossorigin="anonymous"></script>
     <script>
     const socket = io();
+    socket.on('connect', function() {
+        socket.send({ cookie: document.cookie });
+    });
+    socket.connect();
+
     $('form').submit(() => {
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
@@ -31,6 +36,8 @@
     socket.on('chat message', (msg) => {
         $('#messages').append($('<li>').text(msg));
     });
+
+
     </script>
 
   </body>

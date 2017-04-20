@@ -6,7 +6,7 @@ create table users (
    loginid varchar(255),
    mail varchar(255),
    pw varchar(255),
-   firiends int[],
+   friends int[],
    icon varchar(255),
    status int,
    memo varchar(255)

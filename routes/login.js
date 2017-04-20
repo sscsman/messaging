@@ -5,7 +5,7 @@ var pg = require('pg');
 
 router.get('/', function(req, res, next) {
     if (req.session.user_id) {
-        res.redirect('/message');
+        res.redirect('/friend');
     } else {
         res.render('login', {
             title: 'ログイン'
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
 
                 if (userId) {
                     req.session.user_id = userId;
-                    res.redirect('/message');
+                    res.redirect('/friend');
                 } else {
                     res.render('login', {
                         title: 'ログイン',

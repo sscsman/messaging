@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>友達リスト</title>
+<style>
+html,body{
+    hight: 100%;    /*高さを100％に設定*/
+}
+body{
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-width: 200px;
+  min-height: 300px;
+  background-color: #98c8ff;
+}
+div.container{
+  border-radius: 20px;
+margin: 0 0 0 -100px;
+position: absolute;
+top: 50%;
+left: 50%;
+background-color: #fff;
+height:300px;
+width:200px;
+box-shadow:5px 5px 12px 0px;
+}
+.upper{
+  border-top-right-radius:20px;
+  border-top-left-radius:20px;
+  height:30px;
+  margin:0;
+  background-color: #aaaaaa;
+}
+.lower{
+  border-bottom-right-radius:20px;
+  border-bottom-left-radius:20px;
+overflow: auto;
+    background-color: #eeeeee;
+  height:270px;
+}
+.upper>p{
+  margin:0;
+  padding-top:6px;
+text-align: center;
+}
+.lower>a{
+display: block;
+    background-color: #eeeeee;
+     padding:0 8px;
+         border-bottom:solid 1px #030;
+}
+.lower>a:nth-child(<%= mid %>){
+display:none;
+
+}
+.lower>a:hover{
+  background-color: #aaaaaa;
+
+}
+
+</style>
+
+
+  </head>
+  <body>
+
+<div class="container"><div class="upper"><p>ユーザー一覧</p></div><div class="lower">
+
+  <% data.forEach(function (value, key) { %>
+  <a href="/message" target="_self"><%= value %></a>
+  <% }); %>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div></div>
+  </body>
+
+</html>
